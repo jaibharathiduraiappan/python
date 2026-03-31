@@ -1,0 +1,15 @@
+n, m = map(int, input().split()) 
+arrn = list(map(int, input().split()))
+
+# 2 disjoint sets
+At = set(map(int, input().split()))
+Bt = set(map(int, input().split()))
+happy = 0
+for i in arrn:
+    if i in At:
+        happy +=1 
+    if i in Bt:
+        happy -= 1
+    else:
+        happy = happy
+print(happy)
