@@ -1,0 +1,12 @@
+# Read input
+n = int(raw_input())
+english = set(map(int, raw_input().split()))
+
+m = int(raw_input())
+french = set(map(int, raw_input().split()))
+
+# Students subscribed to only English
+only_english = english.difference(french)
+
+# Output the count
+print(len(only_english))
