@@ -1,0 +1,14 @@
+n = int(input())
+lst = list(map(int, input().split()))
+res = False
+count = 0
+for i in range(len(lst)):
+    if lst[i] > 0:
+        count+=1
+        if str(lst[i]) == str(lst[i])[::-1]:
+            res = True
+            
+if count== len(lst) and res:
+    print("True")
+else:
+    print("False")
