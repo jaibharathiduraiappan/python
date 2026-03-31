@@ -1,0 +1,51 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+def change_all_attr(lst, src, dst):
+    tmp =0
+    tmp = lst[dst]
+    lst[dst] = lst[src]
+    lst[src] = tmp
+
+if __name__ == '__main__':
+    nm = input().split()
+
+    n = int(nm[0])
+
+    m = int(nm[1])
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    k = int(input())
+    lst_table = list(zip(*arr))
+    #print(lst_table)
+    tmp =0
+    for t in range(m):
+        lst_table[t] = list(lst_table[t])
+
+    change = False
+    for i in range(len(lst_table[k]) - 1):
+        for j in range(len(lst_table[k]) - 1):
+            if lst_table[k][j] > lst_table[k][j+1]:
+                for t in range(m):
+                    change_all_attr(lst_table[t],j,j+1)
+                change = True
+        if not change:
+            break
+        
+    #print(lst_table)
+    lst_table = list(zip(*lst_table))
+    #print(lst_table)
+    for t in lst_table:
+        for p in range(len(t)):
+            print("%d"%(t[p]),end= " ")
+        print()
+                
+            
