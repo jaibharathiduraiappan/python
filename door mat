@@ -1,0 +1,13 @@
+n,m=map(int,input().split())
+str=".|."
+count=1
+wc="WELCOME"
+for i in range(0,n//2):
+    pattern= (str*count).center(m,"-")
+    print(pattern)
+    count=count+2
+print(wc.center(m,"-"))  
+for i in range(0,n//2):
+    count=count-2
+    pattern= (str*count).center(m,"-")
+    print(pattern)
